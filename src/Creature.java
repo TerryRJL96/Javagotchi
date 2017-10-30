@@ -1,5 +1,5 @@
 /**
- * Created by k1763940 on 30/10/17.
+ * Created by Terry Louder on 30/10/17.
  */
 public class Creature {
     int energy,fullness,happiness;
@@ -24,6 +24,7 @@ public class Creature {
            energy -= 4;
            happiness -= 6;
            if(fullness>15){fullness = 15;}
+           print("Yummy!");
        }
     }
 
@@ -36,8 +37,9 @@ public class Creature {
             fullness -= 5;
             happiness -= 5;
             if(energy > 15){energy = 15;}
+            print("*Yawn* what a nice nap.");
         }
-        print("*Yawn* what a nice nap.");
+
     }
 
     public void play() {
