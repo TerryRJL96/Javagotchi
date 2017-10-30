@@ -17,7 +17,7 @@ public class Creature {
 
     public void eat(){
        if(fullness >= 12){
-           print(getName() + " cannot eat anymore they're already full");
+           print(getName() + " cannot eat anymore they're already full.");
        }
         else {
            fullness += 8;
@@ -29,7 +29,7 @@ public class Creature {
 
     public void sleep(){
         if(energy >= 12){
-            print(getName() + " is full of energy and cannot sleep");
+            print(getName() + " is full of energy and cannot sleep!");
         }
         else {
             energy += 8;
@@ -49,7 +49,7 @@ public class Creature {
         if (happiness > 15) {
             happiness = 15;
         }
-        print("That was soo much fun!");
+        print("That was soo much fun! Let's do that again.");
     }
 
     public void print(String word){
@@ -57,6 +57,10 @@ public class Creature {
     }
     public String checkStatus(){
         String status ="";
+        if(energy <= 0 || fullness <= 0 || happiness <= 0){
+            print("Oh no! " + this.getName()+ " has died.");
+            System.exit(0);
+        }
         if (happiness<6){
             status += this.getName() + " is feeling sad.\n";
         }
@@ -66,7 +70,10 @@ public class Creature {
         if (energy<6){
             status +=this.getName() + " is getting sleepy.\n";
         }
-
+        if(energy <= 0 || fullness <= 0 || happiness <= 0){
+            print("Oh no! " + this.getName()+ " has died.");
+            System.exit(0);
+        }
         return status;
     }
 }
